@@ -4,8 +4,10 @@ require 'qmg-release'
 default_run_options[:pty] = true
 
 namespace :local do
+	local = LocalDeploy.new(self, "pipeline-app")
+
 	desc "deploy test application to localhost"
 	task :deploy do
-		LocalDeploy.new(self, "build-pipeline-testing").deploy
+		local.deploy
 	end
 end
