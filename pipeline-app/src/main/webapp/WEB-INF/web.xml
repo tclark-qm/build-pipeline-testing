@@ -7,7 +7,7 @@
 
   <servlet>
       <servlet-name>ping</servlet-name>
-      <jsp-file>ping.jsp</jsp-file>
+      <jsp-file>/ping.jsp</jsp-file>
   </servlet>
 
   <servlet-mapping>
