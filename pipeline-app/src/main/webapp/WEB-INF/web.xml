@@ -4,4 +4,14 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
+
+  <servlet>
+      <servlet-name>ping</servlet-name>
+      <jsp-file>ping.jsp</jsp-file>
+  </servlet>
+
+  <servlet-mapping>
+      <servlet-name>ping</servlet-name>
+      <url-pattern>/ping</url-pattern>
+  </servlet-mapping>
 </web-app>
