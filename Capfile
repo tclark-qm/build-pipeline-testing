@@ -32,7 +32,7 @@ end
 # UAT Deployment   #
 ####################
 
-uat_servers = ["uat.server"]
+uat_servers = ["ec2-176-34-69-217.eu-west-1.compute.amazonaws.com"]
 
 namespace :uat do
 	remote = RemoteDeploy.new(self, app_name, uat_servers)
@@ -47,7 +47,7 @@ end
 # PROD Deployment  #
 ####################
 
-prod_servers = ["prod.server.1", "prod.server.2"]
+prod_servers = ["ec2-79-125-49-224.eu-west-1.compute.amazonaws.com"]
 
 namespace :prod do
 	remote = RemoteDeploy.new(self, app_name, prod_servers)
