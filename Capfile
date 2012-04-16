@@ -2,7 +2,7 @@ gem 'qmg-release', '1.0.1'
 require 'qmg-release'
 
 default_run_options[:pty] = true
-app_name = "pipeline-app"
+module_names = %w(pipeline-app)
 
 ####################
 # Local Deployment #
@@ -35,7 +35,7 @@ end
 uat_servers = ["ec2-176-34-69-217.eu-west-1.compute.amazonaws.com"]
 
 namespace :uat do
-	remote = RemoteDeploy.new(self, app_name, uat_servers)
+	remote = RemoteDeploy.new(self, module_names, uat_servers)
 
 	task :deploy do
 		remote.deploy build_number
