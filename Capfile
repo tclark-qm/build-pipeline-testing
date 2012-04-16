@@ -9,7 +9,7 @@ module_names = %w(pipeline-app)
 ####################
 
 namespace :local do
-	local = LocalDeploy.new(self, app_name)
+	local = LocalDeploy.new(self, module_names)
 
 	desc "Deploy application locally"
 	task :deploy do
@@ -50,7 +50,7 @@ end
 prod_servers = ["ec2-79-125-49-224.eu-west-1.compute.amazonaws.com"]
 
 namespace :prod do
-	remote = RemoteDeploy.new(self, app_name, prod_servers)
+	remote = RemoteDeploy.new(self, module_names, prod_servers)
 
 	task :deploy do
 		remote.deploy build_number
