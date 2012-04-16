@@ -3,6 +3,8 @@ require 'qmg-release'
 
 default_run_options[:pty] = true
 module_names = %w(pipeline-app)
+uat_servers = ["ec2-46-51-148-94.eu-west-1.compute.amazonaws.com"]
+prod_servers = ["ec2-176-34-73-181.eu-west-1.compute.amazonaws.com"]
 
 ####################
 # Local Deployment #
@@ -32,8 +34,6 @@ end
 # UAT Deployment   #
 ####################
 
-uat_servers = ["ec2-46-51-148-94.eu-west-1.compute.amazonaws.com"]
-
 namespace :uat do
 	remote = RemoteDeploy.new(self, module_names, uat_servers)
 
@@ -46,8 +46,6 @@ end
 ####################
 # PROD Deployment  #
 ####################
-
-prod_servers = ["ec2-176-43-73-181.eu-west-1.compute.amazonaws.com"]
 
 namespace :prod do
 	remote = RemoteDeploy.new(self, module_names, prod_servers)
